@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Post.css'
 import Avatar from "@material-ui/core/Avatar";
 
 function Post({ username, caption, imageUrl }) {
+    const [comments, setComments] = useState([]);
+    const [comment, setComment] = useState('');
     return (
         <div className="post">
             <div className="post_header">
@@ -12,6 +14,11 @@ function Post({ username, caption, imageUrl }) {
 
             <img className="post_image" src={imageUrl} />
             <h4 className="post_text"><strong>{username}</strong> {caption}</h4>
+            <form className="post_commentBox">
+                <input className="post_input" type="text" placeholder="Add a comment..."
+                    value={comment} onChange={(e) => setComment(e.target.value)} />
+                <button className="post_button" disabled={!comment} type="submit" >Post</button>
+            </form>
         </div>
     );
 }

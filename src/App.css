@@ -4,7 +4,6 @@
 
 .app_headerImage {
     object-fit: contain;
-    background-color: #fafafa;
 }
 
 .app {
@@ -13,7 +12,7 @@
 }
 
 .app_header {
-    background-color: white;
+    background-color: #fafafa;
     padding: 20px;
     object-fit: contain;
     border-bottom: 1px solid lightgray;
