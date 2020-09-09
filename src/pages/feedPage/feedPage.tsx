@@ -40,8 +40,11 @@ function FeedPage() {
         {posts.map((post: any, i) => {
           return <Post key={i} username={post.user.username}
             caption={`${post.photo_caption != null ? post.photo_caption.text : ''}`}
-            imageUrl={post.standard_resolution_url}
-            avatarUrl={post.user.profile_picture} />
+            pictureUrl={post.standard_resolution_url}
+            avatarUrl={post.user.profile_picture}
+            commentsNr={post.comments.length}
+            likesNr={post.likes.length}
+            tags={post.tags.name} />
         })}
       </div>
     </div >

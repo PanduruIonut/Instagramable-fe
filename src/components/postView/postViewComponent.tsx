@@ -12,19 +12,21 @@ function PostViewComponent({ username, commentsNr, likesNr, tags, pictureUrl, av
                 <h3>{username} </h3>
             </div>
 
-            <img className="post_image" src="https://www.inovex.de/blog/wp-content/uploads/2022/01/one-year-of-react-native.png" />
+            <img className="post_image" src={pictureUrl} />
             <h4 className="post_text"><strong>{username}</strong> {caption}</h4>
-            <h4 className="post_tags">#test #insta</h4>
-            <img className="love_icon" src="https://image.flaticon.com/icons/svg/148/148836.svg"></img>
-            <img className="bubble_icon" src="https://image.flaticon.com/icons/svg/1077/1077049.svg"></img>
-            <h4 className="post_likes">99 Likes</h4>
-            <h4 className="post_comms">99 Comms</h4>
+            <h4 className="post_tags">{tags}</h4>
+            <div className="stats">
+                <img className="love_icon" src="https://image.flaticon.com/icons/svg/148/148836.svg"></img>
+                <h4 className="post_likes">{likesNr}</h4>
+                <img className="bubble_icon" src="https://image.flaticon.com/icons/svg/1077/1077049.svg"></img>
+                <h4 className="post_comms">{commentsNr}</h4>
+            </div>
             <form className="post_commentBox">
                 <input className="post_input" type="text" placeholder="Add a comment..."
                     value={comment} onChange={(e) => setComment(e.target.value)} />
                 <button className="post_button" disabled={!comment} type="submit" >Post</button>
             </form>
-        </div>
+        </div >
     );
 }
 

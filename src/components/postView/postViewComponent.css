@@ -54,24 +54,32 @@
     height: 20px;
     width: 20px;
     margin-left: 10px;
+    float: left;
 }
 
 .love_icon {
     height: 20px;
     width: 20px;
     margin-left: 20px;
+    float: left;
 }
 
 .post_likes {
     margin-left: 10px;
+    float: left;
 }
 
-.post_comments {
+.post_comms {
     margin-left: 10px;
+    float: left;
 }
 
 .post_tags {
     margin-left: 20px;
     margin-bottom: 15px;
     color: lightskyblue;
+}
+
+.stats {
+    margin-bottom: 50px;
 }
