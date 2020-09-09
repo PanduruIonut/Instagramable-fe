@@ -3,20 +3,7 @@ import './App.css';
 import Post from './Post';
 
 function App() {
-  const [posts, setPosts] = useState([{
-    username: "Ionut",
-    caption: "Caption",
-    imageUrl: "https://reactjs.org/logo-og.png"
-  }, {
-    username: "Ionut",
-    caption: "Caption",
-    imageUrl: "https://reactjs.org/logo-og.png"
-  },
-  {
-    username: "Ionut",
-    caption: "Caption",
-    imageUrl: "https://reactjs.org/logo-og.png"
-  }
+  const [posts, setPosts] = useState([
   ])
 
   useEffect(() => {
@@ -33,8 +20,7 @@ function App() {
             return;
           }
           response.json().then(function (data) {
-            console.log(data);
-            setPosts(data);
+            setPosts(data.photos);
           });
         }
       )
@@ -51,8 +37,11 @@ function App() {
           alt=""></img>
       </div>
       <div className="app_posts">
-        {posts.map(post => {
-          return <Post username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
+        {posts.map((post: any, i) => {
+          return <Post key={i} username={post.user.username}
+            caption={`${post.photo_caption != null ? post.photo_caption.text : ''}`}
+            imageUrl={post.standard_resolution_url}
+            avatarUrl={post.user.profile_picture} />
         })}
       </div>
     </div >

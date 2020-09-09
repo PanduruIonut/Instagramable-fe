@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import './Post.css'
 import Avatar from "@material-ui/core/Avatar";
 
-function Post({ username, caption, imageUrl }) {
+function Post({ username, caption, imageUrl, avatarUrl }) {
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState('');
     return (
         <div className="post">
             <div className="post_header">
-                <Avatar className="post_avatar" alt="" src="/static/images/avatar/1/jpg"></Avatar>
+                <Avatar className="post_avatar" alt="" src={avatarUrl}></Avatar>
                 <h3>{username} </h3>
             </div>
 
